@@ -309,18 +309,18 @@ if [ "${TOOLCHAINS[*]}" = "" ]; then
   elif [ "$(unamer)" = "Windows" ]; then
     TOOLCHAINS=('VS2019')
   else
-    TOOLCHAINS=('CLANGPDB' 'GCC')
+    TOOLCHAINS=('GCC') #'CLANGPDB'
   fi
 fi
 
 if [ "${TARGETS[*]}" = "" ]; then
-  TARGETS=('DEBUG' 'RELEASE' 'NOOPT')
+  TARGETS=('RELEASE') #'DEBUG' 'NOOPT'
 elif [ "${RTARGETS[*]}" = "" ]; then
   RTARGETS=("${TARGETS[@]}")
 fi
 
 if [ "${RTARGETS[*]}" = "" ]; then
-  RTARGETS=('DEBUG' 'RELEASE')
+  RTARGETS=('RELEASE') #'DEBUG'
 fi
 
 if [ "${BUILD_ARGUMENTS[*]}" = "" ]; then
